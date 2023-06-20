@@ -1,46 +1,40 @@
 class TasksController < ApplicationController
-  #def seed_data
-  #  tasks = Task.all
-  #  render json: tasks
-  #end
-  before_action :set_task, only: %i[ show update destroy ]
-   GET /tasks
+  before_action :set_task, only: [:update, :destroy]
+
   def index
-  ##render json: @tasks
+    tasks = Task.all
+    render json: tasks
   end
-  # GET /tasks/1
-  def show
-    render json: @task
-  end
-  # POST /tasks
+
   def create
-    @task = Task.new(task_params)
-    if @task.save
-      render json: @task, status: :created, location: @task
+    task = Task.new(task_params)
+    if task.save
+      render json: task, status: :created
     else
-      render json: @task.errors, status: :unprocessable_entity
+      render json: { error: task.errors.full_messages }, status: :unprocessable_entity
     end
   end
-  # PATCH/PUT /tasks/1
+
   def update
     if @task.update(task_params)
       render json: @task
     else
-      render json: @task.errors, status: :unprocessable_entity
+      render json: { error: @task.errors.full_messages }, status: :unprocessable_entity
     end
   end
-  # DELETE /tasks/1
+
   def destroy
     @task.destroy
+    head :no_content
   end
+
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_task
-      @task = Task.find(params[:id])
-    end
-    # Only allow a list of trusted parameters through.
-    def task_params
-      params.require(:task).permit(:title, :description, :completed)
-    end
+
+  def set_task
+    @task = Task.find(params[:id])
+  end
+
+  def task_params
+    params.require(:task).permit(:title, :description, :completed)
   end
 end
