@@ -11,15 +11,15 @@ This is the backend API for a simple task management system. It provides endpoin
 
 Before running the application, ensure that you have the following installed on your system:
 
-- Ruby (version X.X.X)
-- Ruby on Rails (version X.X.X)
+- Ruby (version 2.7.4)
+- Ruby on Rails (version 2.7.4)
 - SQL Database (e.g., MySQL, PostgreSQL)
 
 ## Getting Started
 
 1. Clone the repository:
 
-git clone https://github.com/your-username/task-management-system-backend.git
+git clone https://github.com/collinsmokaya28/task_manager_api.git
 
 2. Navigate to the project directory:
 
@@ -32,7 +32,7 @@ bundle install
 4. Set up the database:
 
 rails db: create
-rails db:migrate
+rails db: migrate
 
 rails db: seed
 
