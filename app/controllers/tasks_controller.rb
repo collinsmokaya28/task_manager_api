@@ -6,6 +6,10 @@ class TasksController < ApplicationController
     render json: tasks
   end
 
+  def show
+    render json: @task
+  end
+
   def create
     task = Task.new(task_params)
     if task.save
