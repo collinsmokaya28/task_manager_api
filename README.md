@@ -1,24 +1,66 @@
-# README
+# Task Management System - Backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the backend API for a simple task management system. It provides endpoints to create, update, delete, and fetch tasks.
 
-Things you may want to cover:
+## Technologies Used
 
-* Ruby version
+- Ruby on Rails
+- SQL Database
 
-* System dependencies
+## Prerequisites
 
-* Configuration
+Before running the application, ensure that you have the following installed on your system:
 
-* Database creation
+- Ruby (version X.X.X)
+- Ruby on Rails (version X.X.X)
+- SQL Database (e.g., MySQL, PostgreSQL)
 
-* Database initialization
+## Getting Started
 
-* How to run the test suite
+1. Clone the repository:
 
-* Services (job queues, cache servers, search engines, etc.)
+git clone https://github.com/your-username/task-management-system-backend.git
 
-* Deployment instructions
+2. Navigate to the project directory:
 
-* ...
+cd task-management-system-backend
+
+3. Install the dependencies:
+
+bundle install
+
+4. Set up the database:
+
+rails db: create
+rails db:migrate
+
+rails db: seed
+
+5. Start the server:
+
+rails server
+
+
+The backend API will now be accessible at `http://localhost:3000`.
+
+## API Endpoints
+
+The following endpoints are available for managing tasks:
+
+- `GET /tasks` - Get a list of all tasks.
+- `POST /tasks` - Create a new task.
+- `GET /tasks/:id` - Get details of a specific task.
+- `PATCH /tasks/:id` - Update the details of a specific task.
+- `DELETE /tasks/:id` - Delete a specific task.
+
+For detailed usage and request/response examples, please refer to the API documentation.
+
+## Contributing
+
+Contributions are welcome! If you find any issues or have suggestions for improvements, please submit a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+
